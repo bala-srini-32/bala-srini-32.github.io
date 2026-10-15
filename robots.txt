@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://balasrini32.github.io/sitemap.xml
+Sitemap: https://bala-srini-32.github.io/sitemap.xml

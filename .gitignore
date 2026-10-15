@@ -1,0 +1,6 @@
+# CV source stays local; the site serves the compiled main.pdf
+main.tex
+*.aux
+*.log
+*.out
+.DS_Store

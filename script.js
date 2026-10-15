@@ -114,7 +114,7 @@
     const target = document.getElementById("rotatingWord");
     if (!target) return;
     if (prefersReducedMotion) {
-      target.textContent = "agentic AI reliable.";
+      target.textContent = "LLM agents safer.";
       return;
     }
     const s = document.createElement("script");
@@ -125,11 +125,11 @@
       // eslint-disable-next-line no-new
       new window.Typed(target, {
         strings: [
-          "agentic AI reliable.",
-          "agents production-ready.",
-          "LLMs work at scale.",
-          "AI safe and aligned.",
-          "agents smarter over time."
+          "LLM agents safer.",
+          "reward hacking measurable.",
+          "misalignment visible early.",
+          "agents better over time.",
+          "evaluations trustworthy."
         ],
         typeSpeed: 42,
         backSpeed: 22,
@@ -139,7 +139,7 @@
         cursorChar: "|"
       });
     };
-    s.onerror = function () { target.textContent = "agentic AI reliable."; };
+    s.onerror = function () { target.textContent = "LLM agents safer."; };
     document.head.appendChild(s);
   })();
 
