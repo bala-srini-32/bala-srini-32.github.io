@@ -1,5 +1,7 @@
 # CV source stays local; the site serves the compiled main.pdf
 main.tex
+old_cv.tex
+main_v2.tex
 *.aux
 *.log
 *.out
