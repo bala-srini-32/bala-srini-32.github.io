@@ -1,0 +1,223 @@
+% Balasubramaniam Srinivasan, CV (version 2)
+% Compiles with pdfLaTeX, XeLaTeX or LuaLaTeX. On Overleaf the default pdfLaTeX works.
+%
+% Design notes
+%   Typeface: EB Garamond with lining figures.
+%   One accent color (ink) for the name, section titles, team names and paper awards.
+%   Body text stays black; links are marked by a thin tinted underline, not by color.
+%   No italics. Hierarchy comes from size, weight and small caps.
+%   Dates sit on the right edge, so the left edge reads as a clean list of roles.
+%   Bold inside bullets is kept to launch names and the key numbers.
+
+\documentclass[11pt, letterpaper]{article}
+
+% ---------- Page and fonts ----------
+\usepackage[top=0.55in, bottom=0.65in, left=0.75in, right=0.75in]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+\usepackage[lining]{ebgaramond}
+\usepackage[protrusion=true]{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage[normalem]{ulem}
+
+\definecolor{ink}{RGB}{24, 54, 96}
+\colorlet{award}{ink}
+\definecolor{soft}{RGB}{88, 88, 88}
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Balasubramaniam Srinivasan, CV},
+  pdfauthor={Balasubramaniam Srinivasan},
+  pdfsubject={Research Scientist and Research Engineer: reinforcement learning, post-training and safety for LLM agents},
+  pdfkeywords={Research Scientist, Research Engineer, Member of Technical Staff, reinforcement learning, post-training, RLHF, GRPO, DPO, reward modeling, RL environments, reward hacking, agentic misalignment, AI safety, red teaming, LLM agents, agent evaluation, LLM-as-a-judge, Amazon AGI, Amazon Bedrock AgentCore}
+}
+% Links: text keeps its color, with a thin tinted underline set below the descenders.
+\newcommand{\softul}{\bgroup\markoverwith{\textcolor{ink!55}{\rule[-2.2pt]{2pt}{0.4pt}}}\ULon}
+\newcommand{\link}[2]{\href{#1}{\softul{#2}}}
+
+% Keep words whole and set text ragged right, so there are no stretched gaps.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\frenchspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.04}
+
+% Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\small\color{soft} Balasubramaniam Srinivasan \quad\textperiodcentered\quad \thepage\ of \pageref*{LastPage}}
+
+% ---------- Section style: small caps with a thin rule ----------
+\titleformat{\section}
+  {\needspace{5\baselineskip}\Large\scshape\color{ink}}
+  {}{0pt}{}
+  [\vspace{0pt}{\color{ink}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{11pt}{6pt}
+
+% ---------- Building blocks ----------
+% \employer{Organization}, then one or more \position{Title}{Dates}
+\newcommand{\employer}[1]{\par\addvspace{10pt}\needspace{4\baselineskip}\noindent{\bfseries\large #1}\par\vspace{1pt}}
+\newcommand{\position}[2]{\par\noindent #1\hfill #2\par}
+% \team{Team}{Your role}: one line, team in ink and role in black
+\newcommand{\team}[2]{%
+  \par\addvspace{9pt}\needspace{3\baselineskip}\noindent{\color{ink}\bfseries #1}\ \textperiodcentered\ #2\par}
+% \launch{Name}{URL}{Date and role}: bold underlined product name, then a gray note
+\newcommand{\launch}[3]{\textbf{\link{#2}{#1}} {\color{soft}(#3)}.}
+
+\setlist[itemize]{leftmargin=1.1em, itemsep=3pt, topsep=3pt, parsep=0pt, label={\small\textbullet}, before=\raggedright}
+
+% Publications, two lines each: \pub{title}{authors}{venue}{award or empty}
+\newcommand{\me}{\textbf{B.~Srinivasan}}
+\newcommand{\pub}[4]{%
+  \needspace{2.6\baselineskip}\item {\bfseries #1}\\
+  #2.\ \ \mbox{{\color{black!80}#3}\ifx\relax#4\relax\else\ \ {\color{award}\bfseries #4}\fi}}
+\newenvironment{pubs}{\begin{itemize}[leftmargin=1.1em, itemsep=3.5pt, topsep=3pt, before=\raggedright]}{\end{itemize}}
+
+% One-line entries with a right-aligned date
+\newcommand{\lineitem}[2]{\par\noindent #1\hfill #2\par\vspace{3pt}}
+% Skills: bold label followed by its values on the same line, wrapped lines indented
+\newcommand{\skill}[2]{\par{\raggedright\noindent\hangindent=1.1em\hangafter=1\textbf{#1:} #2\par}\vspace{4pt}}
+
+\begin{document}
+
+% ========== Header ==========
+\begin{center}
+  {\fontsize{25pt}{27pt}\selectfont\color{ink} Balasubramaniam Srinivasan}\\[5pt]
+  {\large Senior Applied Scientist and Tech Lead, Amazon AGI}\\[3pt]
+  {\color{black!70} Reinforcement learning \ \textperiodcentered\ \ Post training \ \textperiodcentered\ \ Safety and alignment \ \textperiodcentered\ \ Agentic AI}\\[6pt]
+  Santa Clara, CA
+  \quad\textperiodcentered\quad \link{mailto:balasrini32@gmail.com}{balasrini32@gmail.com}
+  \quad\textperiodcentered\quad \link{https://bala-srini-32.github.io}{bala-srini-32.github.io}\\[2pt]
+  \link{https://linkedin.com/in/balasubramaniam-srinivasan/}{linkedin.com/in/balasubramaniam-srinivasan}
+  \quad\textperiodcentered\quad \link{https://scholar.google.com/citations?user=uM4EhgEAAAAJ}{Google Scholar}
+\end{center}
+
+\vspace{4pt}
+{\raggedright
+I work on reinforcement learning, post training and safety for LLM agents. At Amazon AGI I build RL environments that measure when agents reward hack or act beyond what they were asked to do, and whether that behavior carries over to new workflows. Before that I was the science tech lead for agentic AI products on Amazon Bedrock and AgentCore, which are used by more than 1,000 enterprise customers. The prompt router I led serves over a million requests a week at over 40\% lower cost while matching the strongest model in its family. I have a PhD in computer science from Purdue and papers at ICLR, NeurIPS, ICML and EMNLP, including an ICLR oral and two spotlights.\par}
+
+% ========== Experience ==========
+\section{Experience}
+
+\employer{Amazon}
+\position{Senior Applied Scientist and Tech Lead}{Apr 2024 -- present}
+\position{Applied Scientist}{Jun 2022 -- Apr 2024}
+\begin{itemize}
+  \item Science tech lead for four generally available launches and core contributor to three more.
+  \item Set technical direction and science roadmaps spanning several quarters, and presented them to directors and VPs. Led cross functional science and engineering teams from concept to launch.
+  \item Member of the hiring committee for senior scientist interviews. Mentored over 15 scientists and PhD interns.
+\end{itemize}
+
+\team{Amazon AGI, Responsible AI}{RL environments for agentic safety, since 2026}
+\begin{itemize}
+  \item \textbf{Insider threat environments.} Build RL environments, graders and reward signals that measure agentic misalignment: LLM agents acting beyond what they were legitimately asked to do, driven by reward hacking and specification gaming.
+  \item \textbf{Red team and blue team mutation.} Adversarially mutate existing long horizon environments and measure whether each mutation raises the attack success rate for eliciting this behavior in coding, data and tool use workflows.
+  \item \textbf{Misalignment generalization.} Study whether behaviors learned in one workflow appear in held out workflows.
+\end{itemize}
+
+\team{Amazon Bedrock AgentCore}{Tech Lead, agent optimization, search and security}
+\begin{itemize}
+  \item \launch{AWS Agent Registry}{https://aws.amazon.com/about-aws/whats-new/2026/08/aws-agent-registry-generally-available/}{GA Aug 2026, Tech Lead} A governed catalog for finding and managing agents, MCP servers, tools and skills. Built a pre-deployment security scanner and RL driven automated red teaming for prompt injection, jailbreaks and unsafe tool use, mapped to the OWASP Top 10 for Agentic Applications. Led the science for hybrid search with finetuned retrievers.
+  \item \launch{AgentCore Optimization}{https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-new-optimization-capabilities/}{GA Jun 2026, Tech Lead} Improves production agents from their own OpenTelemetry traces. Led recommendations for system prompts and tool descriptions, tested with batch evaluations and live A/B tests, and failure insights (in preview). Also led the science for generated skill files and RL policies that trade off correctness and cost.
+  \item \launch{AgentCore Evaluations}{https://aws.amazon.com/about-aws/whats-new/2026/03/agentcore-evaluations-generally-available/}{GA Mar 2026, Core contributor} Owned synthetic data generation for agent evaluation and the meta evaluation of LLM judges: calibration, drift and agreement with human raters. Contributed scoring methods for task success, trajectories, tool use, safety and policy adherence. Adopted by \textbf{over 500 enterprise customers}.
+\end{itemize}
+
+\team{Amazon Bedrock}{Tech Lead, Intelligent Prompt Routing}
+\begin{itemize}
+  \item \launch{Bedrock Intelligent Prompt Routing}{https://aws.amazon.com/blogs/machine-learning/use-amazon-bedrock-intelligent-prompt-routing-for-cost-and-latency-benefits/}{GA Apr 2025, Tech Lead} Routes each prompt to the model with the best quality within the customer's cost limit. Led the calibrated quality predictors trained on 1.5 million annotated prompts, the quality and cost tradeoff that customers set, and offline and online evaluation (IPR, EMNLP 2025). Serves \textbf{over a million requests a week} at \textbf{over 40\% lower cost} while matching the strongest model in its family, with \textbf{under 150 ms} of routing latency.
+  \item \launch{Bedrock Prompt Optimization}{https://aws.amazon.com/about-aws/whats-new/2025/04/prompt-optimization-amazon-bedrock-generally-available/}{GA Apr 2025, Core contributor} Built prompt rewriting strategies and evaluation for each task type across Claude, Llama, Nova and Mistral. Coauthored the EMNLP 2025 survey of automatic prompt optimization.
+\end{itemize}
+
+\team{Amazon DataZone and AWS AI Research and Education}{Tech Lead, LLMs for data cataloging}
+\begin{itemize}
+  \item \launch{AutoDoc for Amazon DataZone}{https://aws.amazon.com/blogs/big-data/ai-recommendations-for-descriptions-in-amazon-datazone-for-enhanced-business-data-cataloging-and-discovery-is-now-generally-available/}{GA Mar 2024, Tech Lead} Uses LLMs to document enterprise data catalogs without reading the values in the columns. Led the science for schema aware routing, hallucination filtering and evaluation with LLM judges across more than 20 industry domains. Used on \textbf{over 100,000 tables}. First inventor on US Patent 12,524,628.
+  \item \launch{Business Name Generation}{https://aws.amazon.com/blogs/aws/amazon-datazone-now-generally-available-collaborate-on-data-projects-across-organizational-boundaries/}{GA Oct 2023, Core contributor} Designed a small model that names every column of a table at once and is equivariant to column order. It beat the leading LLMs of the time by \textbf{over 10 absolute points}.
+\end{itemize}
+
+\employer{Purdue University}
+\position{Graduate Research Assistant, advised by Bruno Ribeiro}{Aug 2018 -- May 2022}
+\begin{itemize}
+  \item Designed neural networks that respect the symmetries of sets, graphs and hypergraphs, and proved how expressive they are: Janossy Pooling (ICLR 2019), Relational Pooling (ICML 2019), positional versus structural graph representations (ICLR 2020), hypergraph networks (SDM 2021) and ESAN (ICLR 2022).
+  \item Applied Scientist Intern at Amazon Web Services in the summers of 2020 and 2021, working on hypergraph neural networks and protein representations.
+\end{itemize}
+
+\employer{ARM}
+\position{Software Engineer, Performance Modeling and Analysis}{Jul 2015 -- Jul 2016}
+\begin{itemize}
+  \item Built performance models of the ARM Cortex memory subsystem and a benchmark suite used by silicon partners.
+\end{itemize}
+
+% ========== Education ==========
+\section{Education}
+
+\position{\textbf{PhD in Computer Science}, Purdue University. GPA 4.00 out of 4.00}{Aug 2018 -- May 2022}
+\position{{\color{soft}Thesis: ``On Higher Order Graph Representation Learning.'' Advisor: Bruno Ribeiro.}}{}
+\vspace{5pt}
+\position{\textbf{MS in Computer Science}, University of California, San Diego. GPA 3.97 out of 4.00}{Sep 2016 -- Jun 2018}
+\vspace{5pt}
+\position{\textbf{BE (Hons.) in Electrical and Electronics Engineering}, BITS Pilani. GPA 8.97 out of 10}{Aug 2011 -- May 2015}
+\position{{\color{soft}Merit scholarship for the top 2\% of students. Undergraduate thesis at the Indian Institute of Science.}}{}
+
+% ========== Service and honors ==========
+\section{Service and Honors}
+\lineitem{Area Chair for NeurIPS, COLM and ACL Rolling Review}{2023 -- present}
+\lineitem{Reviewer for ICML, ICLR, AAAI and the Learning on Graphs Conference}{2020 -- present}
+\lineitem{Award for Excellence in Teaching, University of California, San Diego}{2018}
+
+% ========== Publications ==========
+\section{Selected Publications}
+
+\begin{pubs}
+  \pub{BayesFlow: A Probability Inference Framework for Meta-Agent Assisted Workflow Generation}
+      {B.~Yuan, Y.~Zhou, Z.~Xu, K.~Ramnath, A.~Feng, \me}{Findings of EACL 2026}{}
+  \pub{Diffusion Language Model Inference with Monte Carlo Tree Search (MEDAL)}
+      {Z.~Huang, K.~Ramnath, Y.~Chen, A.~Feng, S.~Woo, \me, et al}{Findings of EACL 2026}{}
+  \pub{IPR: Intelligent Prompt Routing with User-Controlled Quality-Cost Trade-offs}
+      {A.~Feng, \me, et al}{EMNLP 2025, Industry Track}{}
+  \pub{A Systematic Survey of Automatic Prompt Optimization Techniques}
+      {K.~Ramnath, et al., including \me}{EMNLP 2025}{}
+  \pub{DiscoverGPT: Multi-task Fine-tuning Large Language Model for Related Table Discovery}
+      {X.~Hu, X.~Qin, C.~Lei, A.~Katsifodimos, Z.~Shen, \me, H.~Rangwala}{Findings of NAACL 2025}{}
+  \pub{CoverICL: Selective Annotation for In-Context Learning via Active Graph Coverage}
+      {C.~Mavromatis, \me, Z.~Shen, J.~Zhang, H.~Rangwala, C.~Faloutsos, G.~Karypis}{EMNLP 2024}{}
+  \pub{Mixed-Type Tabular Data Synthesis with Score-based Diffusion in Latent Space (TabSyn)}
+      {H.~Zhang, J.~Zhang, \me, Z.~Shen, X.~Qin, C.~Faloutsos, H.~Rangwala, G.~Karypis}{ICLR 2024}{Oral}
+  \pub{BioBridge: Bridging Biomedical Foundation Models via Knowledge Graphs}
+      {Z.~Wang, Z.~Wang, \me, V.~N.~Ioannidis, H.~Rangwala, R.~Anubhai}{ICLR 2024}{}
+  \pub{OpenTab: Advancing Large Language Models as Open-domain Table Reasoners}
+      {K.~Kong, J.~Zhang, Z.~Shen, \me, C.~Lei, C.~Faloutsos, H.~Rangwala, G.~Karypis}{ICLR 2024}{}
+  \pub{HYTREL: Hypergraph-enhanced Tabular Data Representation Learning}
+      {P.~Chen, S.~Sarkar, L.~Lausen, \me, S.~Zha, R.~Huang, G.~Karypis}{NeurIPS 2023}{Spotlight}
+  \pub{NameGuess: Column Name Expansion for Tabular Data}
+      {J.~Zhang, Z.~Shen, \me, S.~Wang, H.~Rangwala, G.~Karypis}{EMNLP 2023}{}
+  \pub{Equivariant Subgraph Aggregation Networks (ESAN)}
+      {B.~Bevilacqua, F.~Frasca, D.~Lim, \me, C.~Cai, G.~Balamurugan, M.~M.~Bronstein, H.~Maron}{ICLR 2022}{Spotlight}
+  \pub{Learning over Families of Sets: Hypergraph Representation Learning for Higher Order Tasks}
+      {\me, D.~Zheng, G.~Karypis}{SDM 2021}{}
+  \pub{On the Equivalence between Positional Node Embeddings and Structural Graph Representations}
+      {\me, B.~Ribeiro}{ICLR 2020}{}
+  \pub{Relational Pooling for Graph Representations}
+      {R.~Murphy, \me, V.~Rao, B.~Ribeiro}{ICML 2019}{}
+  \pub{Janossy Pooling: Learning Deep Permutation-Invariant Functions for Variable-Size Inputs}
+      {R.~Murphy, \me, V.~Rao, B.~Ribeiro}{ICLR 2019}{}
+\end{pubs}
+
+% ========== Skills ==========
+\section{Skills}
+\skill{Post training and RL}{PPO, GRPO, DAPO, DPO, RLHF, RLAIF, RL with verifiable rewards, reward modeling, SFT, LoRA, distillation}
+\skill{Agents, evaluation and safety}{RL environments, reward hacking, red teaming, LLM-as-a-judge, tool use, MCP, multi-agent systems, RAG and hybrid retrieval, OpenTelemetry tracing, A/B testing}
+\skill{Engineering}{Python, C++, SQL, PyTorch, Hugging Face Transformers and TRL, Ray, FSDP, DeepSpeed, Megatron-LM, vLLM, SGLang, TensorRT-LLM, AWS (Bedrock, AgentCore, SageMaker)}
+
+\end{document}

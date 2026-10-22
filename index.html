@@ -329,7 +329,7 @@
           <div class="pi-date">GA Mar 2026</div>
         </div>
         <div class="pi-body">
-          <h3>Agent Evaluations</h3>
+          <h3>AgentCore Evaluations</h3>
           <p>Production evaluation framework for AI agents covering task success, tool-use correctness, trajectory quality, and safety adherence. Owned synthetic evaluation data generation and the meta-evaluation of LLM judges (calibration, drift, agreement with human raters).</p>
         </div>
         <div class="pi-right">
@@ -381,7 +381,7 @@
         </div>
         <div class="pi-body">
           <h3>AutoDoc: AI descriptions for the data catalog</h3>
-          <p>LLM-based documentation for enterprise data catalogs. Generates summaries and column descriptions without access to column contents. Schema-aware routing, iterative refinement, and LLM-as-judge evaluation across 1,000+ column tables and 25+ enterprise domains. Granted <a class="pi-link" href="https://patents.google.com/patent/US12524628B1/en">US Patent 12,524,628</a>.</p>
+          <p>LLM-based documentation for enterprise data catalogs. Generates summaries and column descriptions without access to column contents. Schema-aware routing, iterative refinement, and LLM-as-judge evaluation across 1,000+ column tables and 20+ industry domains. Granted <a class="pi-link" href="https://patents.google.com/patent/US12524628B1/en">US Patent 12,524,628</a>.</p>
         </div>
         <div class="pi-right">
           <span class="badge badge-ga">GA</span>
@@ -394,7 +394,7 @@
       <article class="pi rv">
         <div class="pi-left">
           <div class="pi-platform">Amazon DataZone</div>
-          <div class="pi-date">Sep 2023</div>
+          <div class="pi-date">Oct 2023</div>
         </div>
         <div class="pi-body">
           <h3>Business Name Generation</h3>
@@ -403,8 +403,8 @@
         <div class="pi-right">
           <span class="badge badge-ga">GA</span>
           <span class="pi-role">Core contributor</span>
-          <a href="https://aws.amazon.com/blogs/aws/amazon-datazone-now-generally-available-collaborate-on-data-projects-across-organizational-boundaries/" class="pi-link">Launch news →</a>
-          <a href="https://aws.amazon.com/blogs/aws/new-generative-ai-capabilities-for-amazon-datazone-to-further-simplify-data-cataloging-and-discovery-preview/" class="pi-link">Blog →</a>
+          <a href="https://aws.amazon.com/about-aws/whats-new/2023/10/amazon-datazone-generally-available/" class="pi-link">Launch news →</a>
+          <a href="https://aws.amazon.com/blogs/aws/amazon-datazone-now-generally-available-collaborate-on-data-projects-across-organizational-boundaries/" class="pi-link">Blog →</a>
         </div>
       </article>
 
@@ -441,7 +441,7 @@
           <div class="vpill">EACL 2026 · Findings</div>
           <div>
             <div class="pub-title">Diffusion Language Model Inference with Monte Carlo Tree Search (MEDAL)</div>
-            <div class="pub-authors">Z. Huang, K. Ramnath, Y. Chen, A. Feng, <strong>B. Srinivasan</strong>, et al.</div>
+            <div class="pub-authors">Z. Huang, K. Ramnath, Y. Chen, A. Feng, S. Woo, <strong>B. Srinivasan</strong>, et al.</div>
           </div>
           <span class="pub-chev"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
@@ -461,7 +461,7 @@
           <span class="pub-chev"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="pub-abs" id="a-ipr" hidden>
-          <p>Routes queries to the optimal LLM within a model family using lightweight quality estimators trained on 1.5M annotated prompts across 11 candidate LLMs. Powers Bedrock Intelligent Prompt Routing in production, delivering up to 43.9% cost reduction with quality parity vs. top-tier models.</p>
+          <p>Routes queries to the optimal LLM within a model family using lightweight quality estimators trained on 1.5M annotated prompts across 11 candidate LLMs. Powers Bedrock Intelligent Prompt Routing in production, delivering up to 43.9% cost reduction while matching the quality of the strongest model in the family.</p>
           <div class="pub-acts"><a class="pub-ln" href="https://arxiv.org/pdf/2509.06274">PDF</a><a class="pub-ln" href="https://arxiv.org/abs/2509.06274">arXiv →</a><a class="pub-ln" href="https://aclanthology.org/2025.emnlp-industry.170/">ACL →</a></div>
         </div>
       </li>
@@ -491,8 +491,8 @@
           <span class="pub-chev"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="pub-abs" id="a-discovergpt" hidden>
-          <p>Multi-task fine-tuning approach for related table discovery in data lakes, enabling LLMs to jointly reason over schema, content, and provenance signals to find semantically related tables at enterprise scale.</p>
-          <div class="pub-acts"><a class="pub-ln" href="https://aclanthology.org/2025.findings-naacl.28/">ACL →</a></div>
+          <p>Multi-task fine-tuning framework for LLM-based data discovery (joinable and unionable table search) that models how auxiliary supervisions such as entity resolution and column type classification complement or conflict with each other. Plug-and-play with open-domain auxiliary tasks; outperforms the best baseline by up to 7% in F1.</p>
+          <div class="pub-acts"><a class="pub-ln" href="https://aclanthology.org/2025.findings-naacl.21/">ACL →</a></div>
         </div>
       </li>
 
@@ -551,7 +551,7 @@
           <span class="pub-chev"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="pub-abs" id="a-opentab" hidden>
-          <p>Advances LLMs as open-domain table reasoners by combining retrieval-augmented evidence gathering with iterative chain-of-thought reasoning over tables, enabling strong performance on complex table QA tasks without task-specific fine-tuning.</p>
+          <p>Open-domain table reasoning framework powered by LLMs: a table retriever fetches relevant tables, the LLM generates SQL programs to parse them efficiently, and grounded inference over the intermediate SQL execution results produces the answer. Outperforms baselines in both open- and closed-domain settings, with up to 21.5% higher accuracy.</p>
           <div class="pub-acts"><a class="pub-ln" href="https://arxiv.org/abs/2402.14361">arXiv →</a></div>
         </div>
       </li>
@@ -591,7 +591,7 @@
           <div class="vpill award">ICLR 2022 · Spotlight</div>
           <div>
             <div class="pub-title">Equivariant Subgraph Aggregation Networks (ESAN)</div>
-            <div class="pub-authors">B. Bevilacqua, F. Frasca, D. Lim, <strong>B. Srinivasan</strong>, C. Cai, G. Balamurugan, H. Maron.</div>
+            <div class="pub-authors">B. Bevilacqua, F. Frasca, D. Lim, <strong>B. Srinivasan</strong>, C. Cai, G. Balamurugan, M. M. Bronstein, H. Maron.</div>
           </div>
           <span class="pub-chev"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
@@ -685,7 +685,7 @@
         <li class="list-item"><span class="item-yr">Nov 2025</span><div class="item-body"><strong>EMNLP 2025</strong><em>IPR: Intelligent Prompt Routing</em> (Industry Track) and <em>Survey of APO Techniques</em> (Main) accepted.</div></li>
         <li class="list-item"><span class="item-yr">Oct 2025</span><div class="item-body"><strong>Amazon Bedrock AgentCore (GA)</strong>Generally available Oct 13, 2025.</div></li>
         <li class="list-item"><span class="item-yr">Jul 2025</span><div class="item-body"><strong>Amazon Bedrock AgentCore (Preview)</strong>Launched at AWS Summit NYC, Jul 16, 2025.</div></li>
-        <li class="list-item"><span class="item-yr">Jun 2025</span><div class="item-body"><strong>NAACL 2025 Findings</strong><em>DiscoverGPT: Multi-task Fine-tuning LLM for Related Table Discovery</em> accepted.</div></li>
+        <li class="list-item"><span class="item-yr">Apr 2025</span><div class="item-body"><strong>NAACL 2025 Findings</strong><em>DiscoverGPT: Multi-task Fine-tuning LLM for Related Table Discovery</em> accepted.</div></li>
         <li class="list-item"><span class="item-yr">Apr 2025</span><div class="item-body"><strong>Bedrock IPR and Prompt Optimization (GA)</strong>Both move to general availability.</div></li>
         <li class="list-item"><span class="item-yr">Dec 2024</span><div class="item-body"><strong>AWS re:Invent 2024</strong>Bedrock Intelligent Prompt Routing and Prompt Optimization announced in preview.</div></li>
         <li class="list-item"><span class="item-yr">Nov 2024</span><div class="item-body"><strong>EMNLP 2024</strong><em>CoverICL: Selective Annotation for In-Context Learning via Active Graph Coverage</em> accepted.</div></li>
@@ -694,7 +694,7 @@
         <li class="list-item"><span class="item-yr">Nov 2023</span><div class="item-body"><strong>NeurIPS 2023</strong><em>HYTREL</em> accepted (Spotlight).</div></li>
         <li class="list-item"><span class="item-yr">Nov 2023</span><div class="item-body"><strong>EMNLP 2023</strong><em>NameGuess: Column Name Expansion for Tabular Data</em> accepted.</div></li>
         <li class="list-item"><span class="item-yr">Nov 2023</span><div class="item-body"><strong>AWS re:Invent 2023</strong>AutoDoc announced in preview.</div></li>
-        <li class="list-item"><span class="item-yr">Sep 2023</span><div class="item-body"><strong>Amazon DataZone (GA)</strong>Business Name Generation (BNG) ships as part of DataZone general availability launch.</div></li>
+        <li class="list-item"><span class="item-yr">Oct 2023</span><div class="item-body"><strong>Amazon DataZone (GA)</strong>Business Name Generation (BNG) ships as part of DataZone general availability launch.</div></li>
         <li class="list-item"><span class="item-yr">Jun 2022</span><div class="item-body"><strong>Joined Amazon AWS</strong>Defended PhD at Purdue; joined AWS AI Research &amp; Education as an Applied Scientist.</div></li>
         <li class="list-item"><span class="item-yr">Jan 2022</span><div class="item-body"><strong>ICLR 2022</strong><em>ESAN: Equivariant Subgraph Aggregation Networks</em> accepted (Spotlight).</div></li>
         <li class="list-item"><span class="item-yr">Apr 2021</span><div class="item-body"><strong>SDM 2021</strong><em>Learning over Families of Sets: Hypergraph Representation Learning for Higher Order Tasks</em> accepted.</div></li>
